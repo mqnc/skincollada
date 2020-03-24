@@ -1,0 +1,15 @@
+{
+	"Cube":{
+		"diffuse":{"color":[1, 0, 0, 1]},
+	},
+	"Cylinder":{
+		"diffuse":{"color":[1, 1, 0, 1]}
+	},
+	"Icosphere":{
+		"diffuse":{"color":[0, 1, 0, 1]}
+	},
+	"SphereIsMissing":{},
+	"Suzanne":{
+		"diffuse":{"color":[0, 1, 1, 1]}
+	}
+}
