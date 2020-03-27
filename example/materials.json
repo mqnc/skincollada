@@ -1,15 +1,21 @@
 {
 	"Cube":{
-		"diffuse":{"color":[1, 0, 0, 1]},
+		"diffuse":{"color":[1, 0, 0, 1], "map":"test.png", "repeat":[3, 3], "wrap":[1, 1], "offset":[0.5, 0.5]},
+		"emissive":{"color":[0, 1, 0, 1], "map":"test.png", "repeat":[3, 3], "wrap":[1, 1], "offset":[0.5, 0.5]}
 	},
-	"Cylinder":{
-		"diffuse":{"color":[1, 1, 0, 1]}
+	"Sphere":{
+		"diffuse":{"color":[0, 0, 1, 1]},
+		"specular":{"color":[1, 0, 0, 1]},
+		"shininess":100
 	},
 	"Icosphere":{
-		"diffuse":{"color":[0, 1, 0, 1]}
+		"diffuse":{"color":[0, 1, 0, 1]},
+		"emissive":{"color":[0, 0.2, 0, 1]}
 	},
-	"SphereIsMissing":{},
+	"CylinderIsMissing":{},
 	"Suzanne":{
-		"diffuse":{"color":[0, 1, 1, 1]}
+		"diffuse":{"color":[0, 1, 1, 1]},
+		"specular":{"color":[1, 1, 1, 1], "map":"specular.png"},
+		"normal":{"map":"normal.png"}
 	}
 }

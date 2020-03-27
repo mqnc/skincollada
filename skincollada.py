@@ -31,8 +31,10 @@ dae.insertAfter("library_images", "library_effects")
 dae.insertAfter("library_effects", "library_materials")
 
 def cb(node, level):
-	if node.tag == "triangles":
-		node.set("material", "MESH_MATERIAL_0")
+	if node.tag == "geometry":
+		name = node.get("name").split(".")[0]
+		if name in materials:
+			node.find("mesh").find("triangles").set("material", "MESH_MATERIAL_0")
 
 	if node.tag == "instance_geometry":
 		name = node.get("name").split(".")[0]
@@ -74,14 +76,14 @@ def cb(node, level):
 					img = prop["map"]
 					name = file2name(img)
 
-					newparam = append(profile, "new_param")
+					newparam = append(profile, "newparam")
 					newparam.set("sid", name + "_surface")
 					surface = append(newparam, "surface")
 					surface.set("type", "2D")
 					init_from = append(surface, "init_from")
 					init_from.text = name
 
-					newparam = append(profile, "new_param")
+					newparam = append(profile, "newparam")
 					newparam.set("sid", name + "_sampler")
 					sampler2d = append(newparam, "sampler2D")
 					source = append(sampler2d, "source")

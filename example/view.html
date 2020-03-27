@@ -16,15 +16,27 @@ camera.lookAt(0, 0, 0);
 var scene = new THREE.Scene();
 scene.add(new THREE.AxesHelper());
 
+function coorectNormals(group){
+	if(group.type == "Mesh"){
+		if(group.material){
+			group.material.normalMapType = THREE.ObjectSpaceNormalMap
+		}
+	}
+	for(var i=0; i<group.children.length; i++){
+		coorectNormals(group.children[i])
+	}
+}
+
 var loader = new THREE.ColladaLoader();
-loader.load('threejs.dae', function(collada){
+loader.load('result.dae', function(collada){
+	coorectNormals(collada.scene)
 	scene.add(collada.scene)
 } )
 
 var ambientLight = new THREE.AmbientLight(0x808080);
 scene.add(ambientLight);
 var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.8 );
-directionalLight.position.set( 1, 1, 1 ).normalize();
+directionalLight.position.set( 3, 4, 5 ).normalize();
 scene.add( directionalLight );
 
 renderer = new THREE.WebGLRenderer();
