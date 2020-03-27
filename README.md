@@ -1,5 +1,5 @@
 # SkinCollada
-apply materials to dae files so they can be used with three.js
+Apply materials to Collada files so they can be used with three.js.
 
 ## Usage
 Create all your meshes in Blender, assign names to them (in the mesh browser) and export them as a Collada (.dae) file. Then create a json file specifying the material for each mesh:
@@ -39,3 +39,9 @@ or if you want to try the example:
 ```
 python skincollada.py exampe/blender.dae example/materials.json example/result.dae
 ```
+
+The (somewhat ugly because I didn't put any effort into it) result can be seen here: https://mqnc.github.io/skincollada/example/view.html
+
+Now you can use the resulting beautifully skinned collada file in your three.js (or other) projects.
+
+### Enjoy!
